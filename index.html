@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MetaClean - Image Metadata Remover</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>🧼 MetaClean</h1>
+    <p class="notice">Your image never leaves your device. No uploads, no tracking, no cookies.</p>
+
+    <div id="drop-zone">
+      <p>Drag & Drop Image Here or Click to Select</p>
+      <input type="file" id="fileInput" accept="image/jpeg,image/png" />
+    </div>
+
+    <div id="preview-container">
+      <img id="preview" src="" alt="Image Preview" />
+    </div>
+
+    <div class="buttons">
+      <button id="removeBtn" disabled>Remove Metadata</button>
+      <button id="downloadBtn" disabled>Download Cleaned Image</button>
+    </div>
+
+    <p id="toast" class="hidden"></p>
+  </div>
+
+  <script src="piexif.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
