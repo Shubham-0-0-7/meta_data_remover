@@ -1,66 +1,139 @@
+/* Base Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-    font-family: sans-serif;
-    text-align: center;
-    background: #f4f4f4;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .container {
-    max-width: 600px;
-    margin: auto;
-    padding: 20px;
-  }
-  
-  #drop-zone {
-    border: 2px dashed #aaa;
-    padding: 30px;
-    background-color: #fff;
-    cursor: pointer;
-    margin-bottom: 20px;
-    position: relative;
-  }
-  
-  #drop-zone input {
-    opacity: 0;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    cursor: pointer;
-  }
-  
-  #preview-container {
-    display: none;
-    margin-bottom: 20px;
-  }
-  
-  #preview {
-    max-width: 100%;
-    height: auto;
-    border: 1px solid #ccc;
-  }
-  
-  button {
-    margin: 5px;
-    padding: 10px 20px;
-    font-size: 1rem;
-    cursor: pointer;
-  }
-  
-  .notice {
-    font-size: 0.9rem;
-    color: #444;
-    margin-bottom: 15px;
-  }
-  
-  #toast {
-    margin-top: 15px;
-    color: green;
-  }
-  
-  .hidden {
-    display: none;
-  }
-  
+  font-family: "Segoe UI", sans-serif;
+  background-color: #f5f7fa;
+  color: #222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+
+/* Card container */
+.main-wrapper {
+  width: 100%;
+  max-width: 800px;
+}
+
+.card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Header */
+h1 {
+  font-size: 2.4rem;
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+
+.description {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  color: #555;
+}
+
+/* File input */
+.file-label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+input[type="file"] {
+  width: 100%;
+  padding: 15px;
+  font-size: 1rem;
+  border: 2px dashed #ccc;
+  border-radius: 10px;
+  background-color: #f0f0f0;
+  cursor: pointer;
+  transition: border 0.3s;
+}
+
+input[type="file"]:hover {
+  border-color: #3498db;
+}
+
+/* Image preview */
+#preview-container {
+  margin: 30px 0;
+  display: flex;
+  justify-content: center;
+}
+
+#preview {
+  max-width: 100%;
+  max-height: 400px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.05);
+}
+
+/* Buttons */
+.button-group {
+  margin-top: 20px;
+}
+
+button {
+  background-color: #3498db;
+  color: white;
+  padding: 14px 24px;
+  margin: 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover:not(:disabled) {
+  background-color: #2980b9;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Toast Notification */
+#toast {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #2ecc71;
+  color: white;
+  padding: 14px 30px;
+  border-radius: 8px;
+  font-size: 1rem;
+  display: none;
+  z-index: 1000;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+#toast.hidden {
+  display: none;
+}
+
+/* Footer */
+footer {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #666;
+  padding: 10px 20px;
+}

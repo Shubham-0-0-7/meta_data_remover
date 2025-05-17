@@ -2,33 +2,39 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MetaClean - Image Metadata Remover</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MetaClean – Image Metadata Remover</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <h1>🧼 MetaClean</h1>
-    <p class="notice">Your image never leaves your device. No uploads, no tracking, no cookies.</p>
+  <div class="main-wrapper">
+    <div class="card">
+      <h1>MetaClean</h1>
+      <p class="description">
+        A 100% offline tool to remove all hidden metadata from your JPEG or PNG images. Your privacy stays with you.
+      </p>
 
-    <div id="drop-zone">
-      <p>Drag & Drop Image Here or Click to Select</p>
-      <input type="file" id="fileInput" accept="image/jpeg,image/png" />
+      <label for="fileInput" class="file-label">Select an image</label>
+      <input type="file" id="fileInput" accept="image/jpeg, image/png" />
+
+      <div id="preview-container">
+        <img id="preview" alt="Image Preview" style="display: none;" />
+      </div>
+
+      <div class="button-group">
+        <button id="removeBtn" disabled>🧹 Remove Metadata</button>
+        <button id="downloadBtn" disabled>⬇️ Download Clean Image</button>
+      </div>
     </div>
 
-    <div id="preview-container">
-      <img id="preview" src="" alt="Image Preview" />
-    </div>
-
-    <div class="buttons">
-      <button id="removeBtn" disabled>Remove Metadata</button>
-      <button id="downloadBtn" disabled>Download Cleaned Image</button>
-    </div>
-
-    <p id="toast" class="hidden"></p>
+    <footer>
+      <p>🛡️ All processing happens locally in your browser. No uploads. No tracking. No cookies.</p>
+    </footer>
   </div>
 
-  <script src="piexif.min.js"></script>
+  <div id="toast" class="hidden"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/piexifjs"></script>
   <script src="script.js"></script>
 </body>
 </html>
